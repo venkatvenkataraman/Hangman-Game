@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hangman Game</title>
+      <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+      <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  </head>
+  <body>
+      <!-- This version of Hangman is a guessing game for one player and the computer.
+      The computer guesses the name of a 80s band. The player tries to guess
+      the band by suggesting letters, within a certain number of guesses. -->
+
+      <!-- First we set up the rows and columns for the layout, using Boothstrap. -->
+
+      <div class="gameContainer">
+            <div class="row">
+              <div class="col-md-12" id="gameLogoColumn">
+                <img id="gameLogo" src="assets/images/hangmanImage1.jpg" class="img-responsive auth-image" alt="Hangman Image">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <img id="gameIconOrBand" src="assets/images/Pure80sPopLogo.jpg" class="img-responsive auth-image" alt="Pure 80s Pop Logo">
+                <br>
+                <audio controls autoplay>
+                  <source src="assets/sounds/hangmanThemeStart.mp3" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
+              </div>
+              <div class="col-md-1"></div>
+              <div class="col-md-8" id="startButton">
+                <button type="button" class="btn btn-primary btn-xlarge btn-block" onclick="window.open('start.html','_self')">Start The Game</button>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-md-12 h6" id="credits"><footer> Copyright &copy; 2017 Venkataraman</footer></div>
+            </div>
+      </div>
+  </body>
+</html>
