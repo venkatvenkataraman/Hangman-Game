@@ -115,7 +115,7 @@ document.onkeyup = function(event) {
           var audio = new Audio(withoutCommas);
           audio.loop = false;
           audio.play();
-          setTimeout(delayFunction,5000);
+          setTimeout(delayFunction,6000);
           function delayFunction(){
             //   GOOD BYE from this HTML
             loadUrl("youWin.html");
@@ -146,8 +146,13 @@ document.onkeyup = function(event) {
             anoaudio.loop = false;
             anoaudio.play();
             // alert("You LOSE!");
-            //BYE-BYE
-            loadUrl("hangman.html");
+            setTimeout(delay2Function,6000);
+              function delay2Function(){
+                //   GOOD BYE from this HTML
+                //BYE-BYE
+                loadUrl("hangman.html");
+                // alert("Hello");
+              }
             }
          }
       }
