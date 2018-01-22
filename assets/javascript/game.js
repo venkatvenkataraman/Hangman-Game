@@ -7,9 +7,9 @@ document.getElementById("resultsLettersGuessed").innerHTML = "Wrong Letters Gues
 var correctLettersToDisplay=[];
 
 var computerChoices=["MICHAEL_JACKSON","PHIL_COLLINS",
-"PRINCE","MADONNA"];
+"PRINCE","MADONNA","BRUCE_SPRINGSTEEN","LIONEL_RICHIE"];
 
-// "LIONEL_RITCHIE","BRUCE_SPRINGSTEEN","BILLY_OCEAN","CYNDI_LAUPER",
+// "BILLY_OCEAN","CYNDI_LAUPER",
 // "BON_JOVI","BOY_GEORGE","PAULA_ABDUL"
 
 function emptyLettersInFeedbackScreen(computerRandomPick){
@@ -63,7 +63,7 @@ function updateNameInFeedbackWindow(userGuess){
   var withoutCommasButBlanks=correctLettersToDisplay.join(' ');
   console.log(withoutCommasButBlanks);
   // document.getElementById("feedbackName").innerHTML=correctLettersToDisplay;
-document.getElementById("feedbackName").innerHTML=withoutCommasButBlanks;
+  document.getElementById("feedbackName").innerHTML=withoutCommasButBlanks;
 }
 
 function loadUrl(newLocation)
@@ -106,8 +106,19 @@ document.onkeyup = function(event) {
           //   alert("You WIN!");
         }
         if (computerRandomPick==correctLettersToDisplay.join('')){
-          loadUrl("youWin.html");
           // alert("You WIN!");
+          var withoutCommas="../Hangman-Game/assets/images/"+correctLettersToDisplay.join('')+".jpg";
+          // document.getElementById("feedbackName").innerHTML=correctLettersToDisplay;
+          document.getElementById("gameIconOrBand").innerHTML= '<img src="'+ withoutCommas +'">';
+
+          //Let's now play a good snippet of the song as a parting gift
+          withoutCommas="../Hangman-Game/assets/sounds/"+correctLettersToDisplay.join('')+".mp3";
+          var audio = new Audio(withoutCommas);
+          audio.loop = false;
+          audio.play();
+
+          //GOOD BYE from this HTML
+          loadUrl("youWin.html");
         }
       }
       else{
@@ -122,8 +133,19 @@ document.onkeyup = function(event) {
             document.getElementById("resultsLettersGuessed").innerHTML=lettersAlreadyGuessed;
             //Test if the game has been LOST!
             if (guessesRemaining===0) {
-            loadUrl("hangman.html");
+            //YOU LOSE!!
+            var anotherwithoutCommas="../Hangman-Game/assets/images/"+correctLettersToDisplay.join('')+".jpg";
+            // document.getElementById("feedbackName").innerHTML=correctLettersToDisplay;
+            document.getElementById("gameIconOrBand").innerHTML= '<img src="'+ anotherwithoutCommas +'">';
+
+            //Let's now play a good snippet of the song as a parting gift
+            anotherwithoutCommas="../Hangman-Game/assets/sounds/"+correctLettersToDisplay.join('')+".mp3";
+            var anoaudio = new Audio(anotherwithoutCommas);
+            anoaudio.loop = false;
+            anoaudio.play();
             // alert("You LOSE!");
+            //BYE-BYE
+            loadUrl("hangman.html");
             }
          }
       }
