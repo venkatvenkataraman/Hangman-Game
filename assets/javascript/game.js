@@ -66,8 +66,7 @@ function updateNameInFeedbackWindow(userGuess){
   document.getElementById("feedbackName").innerHTML=withoutCommasButBlanks;
 }
 
-function loadUrl(newLocation)
-{
+function loadUrl(newLocation){
 window.location = newLocation;
 return false;
 }
@@ -116,9 +115,12 @@ document.onkeyup = function(event) {
           var audio = new Audio(withoutCommas);
           audio.loop = false;
           audio.play();
-
-          //GOOD BYE from this HTML
-          loadUrl("youWin.html");
+          setTimeout(delayFunction,5000);
+          function delayFunction(){
+            //   GOOD BYE from this HTML
+            loadUrl("youWin.html");
+            // alert("Hello");
+          }
         }
       }
       else{
