@@ -136,12 +136,12 @@ document.onkeyup = function(event) {
             //Test if the game has been LOST!
             if (guessesRemaining===0) {
             //YOU LOSE!!
-            var anotherwithoutCommas="../Hangman-Game/assets/images/"+correctLettersToDisplay.join('')+".jpg";
+            var anotherwithoutCommas="../Hangman-Game/assets/images/"+computerRandomPick+".jpg";
             // document.getElementById("feedbackName").innerHTML=correctLettersToDisplay;
             document.getElementById("gameIconOrBand").innerHTML= '<img src="'+ anotherwithoutCommas +'">';
 
             //Let's now play a good snippet of the song as a parting gift
-            anotherwithoutCommas="../Hangman-Game/assets/sounds/"+correctLettersToDisplay.join('')+".mp3";
+            anotherwithoutCommas="../Hangman-Game/assets/sounds/"+computerRandomPick+".mp3";
             var anoaudio = new Audio(anotherwithoutCommas);
             anoaudio.loop = false;
             anoaudio.play();
